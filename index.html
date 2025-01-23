@@ -16,7 +16,7 @@
 
   <!-- Page 2 -->
   <div class="page" id="page2" style="display: none;">
-    <h1>Since I know you already</h1>
+    <h1>Since I know you already,</h1>
     <h1>and you probably will not ask,</h1>
     <p>I'll take the initiative this time...</p>
     <h2>Will you be my Valentine? ❤️</h2>
@@ -25,8 +25,42 @@
       <button id="no-button">No</button>
     </div>
   </div>
+  
+  <!-- Page 3: Food Choices -->
+  <div class="page" id="page3" style="display: none;">
+    <h1>What would you like for our online dinner date?</h1>
+    <div class="food-options">
+      <button id="food1">
+        <img src="pizza.jpg" alt="Pizza" class="food-img">
+        <p>Pizza</p>
+      </button>
+      <button id="food2">
+        <img src="sushi.jpg" alt="Sushi" class="food-img">
+        <p>Sushi</p>
+      </button>
+      <button id="food3">
+        <img src="pasta.jpg" alt="Pasta" class="food-img">
+        <p>Pasta</p>
+      </button>
+    </div>
+    <button id="next-food-button" style="display: none;">Next</button>
+  </div>
+
+  <!-- Page 4: Time Selection -->
+  <div class="page" id="page4" style="display: none;">
+    <h1>When would you like to have our little digital date?</h1>
+    <input type="time" id="dinner-time" required>
+    <input type="email" id="boyfriend-email" placeholder="Enter your email" required>
+    <button id="submit-time-button">Submit</button>
+  </div>
+
+  <!-- Page 5: Google Calendar Invite -->
+  <div class="page" id="page5" style="display: none;">
+    <h1>Our date is scheduled!</h1>
+    <p>Click the button below to add it to your Google Calendar.</p>
+    <button id="google-calendar-button">Add to Google Calendar</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
