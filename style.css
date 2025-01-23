@@ -11,6 +11,7 @@ body {
 .page {
   display: none;
   padding: 20px;
+  color: #333; /* Ensure that the text in the pages is visible */
 }
 
 /* Page 1 */
