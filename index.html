@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Will You Be My Valentine?</title>
+  <title>Surprise!</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <!-- Page 1 -->
+  <div class="page" id="page1">
+    <h1>Hi [Their Name],</h1>
+    <p>I have a surprise for you.</p>
+    <button id="next-button">Next</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2" style="display: none;">
     <h1>Hey [Their Name],</h1>
     <p>I have a very important question for you...</p>
     <h2>Will you be my Valentine? ❤️</h2>
@@ -16,6 +24,8 @@
       <button id="no-button">No</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
