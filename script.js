@@ -1,4 +1,4 @@
-// Handle the "What is this cheesy little thing?" button on Page 1
+// Handle the "What is this little cheesy thing?" button on Page 1
 document.getElementById("next-button").addEventListener("click", () => {
   document.getElementById("page1").style.display = "none";
   document.getElementById("page2").style.display = "block";
@@ -11,7 +11,7 @@ document.getElementById("yes-button").addEventListener("click", () => {
 });
 
 document.getElementById("no-button").addEventListener("click", () => {
-  alert("Haha funny guy - Wrong answer! Try again. 😜");
+  alert("Haha funny guy. Wrong answer! Try again. 😜");
 });
 
 // Handle food selection on Page 3
@@ -62,3 +62,9 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     window.open(googleCalendarURL, "_blank");
   });
 });
+
+// Show the first page when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("page1").style.display = "block"; // Show Page 1 on load
+});
+
