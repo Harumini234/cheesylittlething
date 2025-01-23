@@ -1,4 +1,4 @@
-// Handle the "Next" button on Page 1
+// Handle the "What is this cheesy little thing?" button on Page 1
 document.getElementById("next-button").addEventListener("click", () => {
   document.getElementById("page1").style.display = "none";
   document.getElementById("page2").style.display = "block";
