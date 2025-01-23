@@ -1,63 +1,148 @@
-/* General Page Styling */
+/* Body styling */
 body {
-  background-color: #ffe6f2; /* Light pink background */
-  color: #ff69b4; /* Hot pink text color */
-  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, playful font */
-  text-align: center; /* Center everything horizontally */
-  margin: 0;
-  padding: 0;
+  background-color: #ffe6f2; /* soft pink background */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* playful font */
+  text-align: center;
+  color: #333;
+  cursor: url('https://i.pinimg.com/originals/70/2c/cd/702ccd5ea9b1c67b1185e00ccf3a8ffb.png'), auto; /* cute custom mouse */
 }
 
-/* Center Text Vertically */
+/* Page Styling */
 .page {
-  height: 100vh; /* Full-screen height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
+  display: none;
+  padding: 20px;
 }
 
-/* Buttons Styling */
-button {
-  background-color: #ff69b4; /* Hot pink button color */
-  color: white;
-  font-size: 18px;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 20px;
-  cursor: url('https://cdn-icons-png.flaticon.com/128/2107/2107845.png'), auto; /* Cute heart cursor */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Page 1 */
+#page1 h1 {
+  font-size: 3rem;
+  color: #ff69b4;
 }
 
-/* Button Hover Effect */
-button:hover {
-  transform: scale(1.1); /* Grows slightly on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Heading and Text Styling */
-h1 {
-  font-size: 3rem; /* Larger heading */
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.5rem; /* Bigger, readable text */
-  margin-bottom: 20px;
-}
-
-/* Valentine Emoji Animation */
-h2 {
+#page1 p {
   font-size: 2rem;
-  animation: pulse 1.5s infinite; /* Add a pulse animation */
+  margin-top: 20px;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+button {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+/* Page 2 */
+#page2 h2 {
+  font-size: 2.5rem;
+  color: #ff1493;
+}
+
+#page2 .buttons button {
+  width: 200px;
+  margin: 20px;
+  background-color: #ff1493;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+#page2 .buttons button:hover {
+  background-color: #ff69b4;
+}
+
+/* Food Options Styling */
+.food-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.food-options button {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.food-options img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.food-options p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #ff1493;
+}
+
+/* Time Picker Styling */
+input[type="time"], input[type="email"] {
+  font-size: 1.5rem;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid #ff69b4;
+  width: 200px;
+}
+
+input[type="time"] {
+  background-color: #fff5f7;
+}
+
+/* Google Calendar Button Styling */
+#google-calendar-button {
+  background-color: #ff69b4;
+  color: white;
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#google-calendar-button:hover {
+  background-color: #ff1493;
+}
+
+/* Next Button Styling */
+#next-food-button, #submit-time-button {
+  background-color: #ff69b4;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#next-food-button:hover, #submit-time-button:hover {
+  background-color: #ff1493;
+}
+
+/* Centering elements in page */
+h1, h2, p {
+  margin-top: 20px;
+}
+
+/* Styling for large buttons */
+button, #google-calendar-button {
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+button:hover, #google-calendar-button:hover {
+  background-color: #ff1493;
 }
