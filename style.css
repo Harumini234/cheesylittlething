@@ -1,22 +1,63 @@
+/* General Page Styling */
+body {
+  background-color: #ffe6f2; /* Light pink background */
+  color: #ff69b4; /* Hot pink text color */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, playful font */
+  text-align: center; /* Center everything horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+/* Center Text Vertically */
 .page {
-  display: none; /* All pages are hidden by default */
+  height: 100vh; /* Full-screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
 }
 
-.page#page1 {
-  display: block; /* Show the first page initially */
-}
-
+/* Buttons Styling */
 button {
-  padding: 10px 20px;
-  margin: 10px;
+  background-color: #ff69b4; /* Hot pink button color */
+  color: white;
   font-size: 18px;
+  padding: 15px 30px;
   border: none;
-  cursor: pointer;
-  border-radius: 8px;
+  border-radius: 20px;
+  cursor: url('https://cdn-icons-png.flaticon.com/128/2107/2107845.png'), auto; /* Cute heart cursor */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Button Hover Effect */
 button:hover {
-  opacity: 0.8;
+  transform: scale(1.1); /* Grows slightly on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Heading and Text Styling */
+h1 {
+  font-size: 3rem; /* Larger heading */
+  margin-bottom: 10px;
+}
 
+p {
+  font-size: 1.5rem; /* Bigger, readable text */
+  margin-bottom: 20px;
+}
+
+/* Valentine Emoji Animation */
+h2 {
+  font-size: 2rem;
+  animation: pulse 1.5s infinite; /* Add a pulse animation */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
