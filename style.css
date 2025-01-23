@@ -3,147 +3,103 @@ body {
   background-color: #ffe6f2; /* soft pink background */
   font-family: 'Comic Sans MS', cursive, sans-serif; /* playful font */
   text-align: center;
-  color: #333;
+  color: #333; /* dark enough text color for visibility */
   cursor: url('https://i.pinimg.com/originals/70/2c/cd/702ccd5ea9b1c67b1185e00ccf3a8ffb.png'), auto; /* cute custom mouse */
 }
 
-/* Page Styling */
+/* Make sure the text inside the pages is visible */
 .page {
   display: none;
   padding: 20px;
-  color: #333; /* Ensure that the text in the pages is visible */
+  color: #333; /* ensure text color is dark enough to be readable */
 }
 
-/* Page 1 */
-#page1 h1 {
-  font-size: 3rem;
-  color: #ff69b4;
+/* Make headings larger and more prominent */
+h1, h2 {
+  color: #ff3399; /* pink color for headings */
+  font-size: 3em;
+  margin-bottom: 20px;
 }
 
-#page1 p {
-  font-size: 2rem;
-  margin-top: 20px;
+/* Paragraph text styling */
+p {
+  font-size: 1.5em;
+  color: #333; /* default text color */
 }
 
+/* Buttons styling */
 button {
-  font-size: 1.5rem;
-  padding: 15px 30px;
-  background-color: #ff69b4;
+  background-color: #ff3399; /* pink background for buttons */
   color: white;
   border: none;
-  border-radius: 15px;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 button:hover {
-  background-color: #ff1493;
+  background-color: #ff66b3; /* slightly darker pink on hover */
 }
 
-/* Page 2 */
-#page2 h2 {
-  font-size: 2.5rem;
-  color: #ff1493;
-}
-
-#page2 .buttons button {
-  width: 200px;
-  margin: 20px;
-  background-color: #ff1493;
-  border-radius: 25px;
-  padding: 15px;
-}
-
-#page2 .buttons button:hover {
-  background-color: #ff69b4;
-}
-
-/* Food Options Styling */
-.food-options {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 30px;
-}
-
-.food-options button {
-  background-color: transparent;
-  border: none;
-  text-align: center;
-  cursor: pointer;
-}
-
-.food-options img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.food-options p {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  color: #ff1493;
-}
-
-/* Time Picker Styling */
-input[type="time"], input[type="email"] {
-  font-size: 1.5rem;
-  padding: 10px;
-  margin: 20px;
-  border-radius: 10px;
-  border: 2px solid #ff69b4;
-  width: 200px;
-}
-
-input[type="time"] {
-  background-color: #fff5f7;
-}
-
-/* Google Calendar Button Styling */
-#google-calendar-button {
-  background-color: #ff69b4;
+/* Large buttons (for Google Calendar) */
+.large-button {
+  background-color: #ff3399; /* pink background */
   color: white;
-  font-size: 1.5rem;
   padding: 20px 40px;
-  border: none;
-  border-radius: 25px;
+  font-size: 1.5em;
+  border-radius: 12px;
   cursor: pointer;
-}
-
-#google-calendar-button:hover {
-  background-color: #ff1493;
-}
-
-/* Next Button Styling */
-#next-food-button, #submit-time-button {
-  background-color: #ff69b4;
-  padding: 15px 30px;
-  font-size: 1.5rem;
+  margin-top: 30px;
+  width: 300px;
   border: none;
-  border-radius: 15px;
-  cursor: pointer;
 }
 
-#next-food-button:hover, #submit-time-button:hover {
-  background-color: #ff1493;
+.large-button:hover {
+  background-color: #ff66b3; /* darker pink on hover */
 }
 
-/* Centering elements in page */
-h1, h2, p {
+/* Add some spacing and nice visuals to images */
+img {
+  width: 150px;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* add shadow for a cute effect */
+}
+
+/* Style the form input for time selection */
+input[type="time"] {
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 2px solid #ff3399;
+  width: 200px;
   margin-top: 20px;
 }
 
-/* Styling for large buttons */
-button, #google-calendar-button {
-  font-size: 1.5rem;
-  padding: 15px 30px;
-  background-color: #ff69b4;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+input[type="email"] {
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  border: 2px solid #ff3399;
+  width: 200px;
+  margin-top: 20px;
 }
 
-button:hover, #google-calendar-button:hover {
-  background-color: #ff1493;
+/* Specific Page Styling (for the large food images) */
+.food-option img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin: 10px;
 }
+
+.food-option img:hover {
+  transform: scale(1.1); /* slightly zooms in on hover for a cute effect */
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
