@@ -1,3 +1,26 @@
+/*Sparkle*/
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: pink; /* Change color if you want */
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.8); /* Glowing effect */
+  animation: sparkleAnimation 0.5s ease-out;
+}
+
+@keyframes sparkleAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+
 /* Body styling */
 body {
   background-color: #ffe6f2; /* soft pink background */
