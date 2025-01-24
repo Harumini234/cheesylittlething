@@ -30,7 +30,7 @@ document.getElementById("yes-button").addEventListener("click", function() {
 
     // Delay the page change so the confetti is visible
     setTimeout(function() {
-        window.location.href = "dinner.html"; // Change to your next page
+        window.location.href = "page3"; // Change to your next page
     }, 1500); // 1.5-second delay to let confetti show
 });
 
