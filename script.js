@@ -20,9 +20,12 @@ document.getElementById("next-button").addEventListener("click", () => {
 });
 
 // Handle the "Yes" and "No" buttons on Page 2
-document.getElementById("yes-button").addEventListener("click", () => {
-  document.getElementById("page2").style.display = "none";
-  document.getElementById("page3").style.display = "block";
+document.getElementById("yes-button").addEventListener("click", function() {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
 });
 
 document.getElementById("no-button").addEventListener("click", () => {
