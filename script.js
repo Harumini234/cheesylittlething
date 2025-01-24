@@ -1,3 +1,18 @@
+//Handle the sparkles
+document.addEventListener("mousemove", function(event) {
+    let sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    document.body.appendChild(sparkle);
+
+    sparkle.style.left = event.pageX + "px";
+    sparkle.style.top = event.pageY + "px";
+
+    setTimeout(() => {
+        sparkle.remove();
+    }, 500); // Removes sparkles after 0.5 sec
+});
+
+
 // Handle the "What is this little cheesy thing?" button on Page 1
 document.getElementById("next-button").addEventListener("click", () => {
   document.getElementById("page1").style.display = "none";
