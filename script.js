@@ -21,17 +21,20 @@ document.getElementById("next-button").addEventListener("click", () => {
 
 // Handle the "Yes" and "No" buttons on Page 2
 document.getElementById("yes-button").addEventListener("click", function() {
-     // Confetti effect
+    // Show confetti
     confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 }
     });
 
-    // Delay the page change so the confetti is visible
+    // Hide current page (Page 2)
+    document.getElementById("page2").style.display = "none";
+
+    // Show the next page (Page 3: Food Choices)
     setTimeout(function() {
-        window.location.href = "page3"; // Change to your next page
-    }, 1500); // 1.5-second delay to let confetti show
+        document.getElementById("page3").style.display = "block";
+    }, 2000); // 2-second delay to let confetti show
 });
 
 document.getElementById("no-button").addEventListener("click", () => {
