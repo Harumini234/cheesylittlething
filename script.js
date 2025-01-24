@@ -9,7 +9,7 @@ document.addEventListener("mousemove", function(event) {
 
     setTimeout(() => {
         sparkle.remove();
-    }, 500); // Removes sparkles after 0.5 sec
+    }, 300); // Removes sparkles after 0.3 sec
 });
 
 
@@ -21,11 +21,17 @@ document.getElementById("next-button").addEventListener("click", () => {
 
 // Handle the "Yes" and "No" buttons on Page 2
 document.getElementById("yes-button").addEventListener("click", function() {
+     // Confetti effect
     confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 }
     });
+
+    // Delay the page change so the confetti is visible
+    setTimeout(function() {
+        window.location.href = "dinner.html"; // Change to your next page
+    }, 1500); // 1.5-second delay to let confetti show
 });
 
 document.getElementById("no-button").addEventListener("click", () => {
