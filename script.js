@@ -21,7 +21,7 @@ document.getElementById("next-button").addEventListener("click", () => {
 
 // Handle the "Yes" and "No" buttons on Page 2
 document.getElementById("yes-button").addEventListener("click", function() {
-    // Show confetti
+   // Show confetti
     confetti({
         particleCount: 100,
         spread: 70,
