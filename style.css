@@ -142,7 +142,7 @@ input[type="time"] {
   justify-content: center; /* Center the food options horizontally */
   gap: 20px; /* Add space between food options */
   flex-wrap: wrap; /* Allow wrapping if the screen is too small */
-  margin-bottom: 30px; /* Add some space below the food options */
+  margin-bottom: 50px; /* Add some space below the food options */
 }
 
 /* Specific food option styling */
