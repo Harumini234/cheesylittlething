@@ -71,21 +71,32 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     return;
   }
 
-// Fixed date: February 14, 2025
+// Fixed date: February 14, 2025 (explicit year, month, day)
   const eventYear = 2025;
-  const eventMonth = 1; // February (0-based index, January = 0, February = 1)
+  const eventMonth = 1; // February (0-based index: January = 0, February = 1)
   const eventDay = 14;
 
-  // Split the selected time into hours and minutes
+// Split the selected time into hours and minutes
   const [hours, minutes] = selectedTime.split(':');
 
-  // Create start date using the Date constructor with UTC
-  const eventStartDate = new Date(eventYear, eventMonth, eventDay, hours, minutes, 0);
+// Log the values for debugging
+  console.log("Selected time:", selectedTime);
+  console.log("Hours:", hours, "Minutes:", minutes);
 
-  // Add 1 hour to the start date for the end time
+// Create the exact date object for February 14, 2025 at the chosen time
+// Use local time (not UTC) because we want to match the user's local timezone
+  const eventStartDate = new Date(eventYear, eventMonth, eventDay, hours, minutes);
+
+// Log the created event start date
+  console.log("Event Start Date:", eventStartDate);
+
+// Add 1 hour to the start date for the end time
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
 
-  // Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss)
+// Log the event end date
+  console.log("Event End Date:", eventEndDate);
+
+// Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss)
   const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Removes milliseconds
   const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Removes milliseconds
 
