@@ -135,14 +135,6 @@ input[type="time"] {
   margin-top: 20px;
 }
 
-input[type="email"] {
-  padding: 10px;
-  font-size: 1.2em;
-  border-radius: 5px;
-  border: 2px solid #F2A6A1; /*Soft Rose Red*/
-  width: 200px;
-  margin-top: 20px;
-}
 
 /* Center the food options and make them responsive */
 .food-options {
@@ -155,8 +147,8 @@ input[type="email"] {
 
 /* Specific food option styling */
 .food-option img {
-  width: 120px; /* Adjust the width of images */
-  height: auto;
+  width: 100px; /* Adjust the width of images (smaller size) */
+  height: 150px; /* Adjust the height to maintain aspect ratio (vertical images) */
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
