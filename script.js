@@ -64,10 +64,9 @@ document.getElementById("next-food-button").addEventListener("click", () => {
 // Handle time selection on Page 4 with dynamic email
 document.getElementById("submit-time-button").addEventListener("click", () => {
   selectedTime = document.getElementById("dinner-time").value;
-  const boyfriendEmail = document.getElementById("boyfriend-email").value;
 
-  if (!selectedTime || !boyfriendEmail) {
-    alert("Please select a time and enter an email!");
+  if (!selectedTime) {
+    alert("Please select a time so we can set this up!");
     return;
   }
 
@@ -114,7 +113,7 @@ const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0] + 'Z'; //
   const eventTitle = `Dinner with Mini my small cheesy gf (${selectedFood} date)`;
 
  // Google Calendar URL with multiple attendees (you + the user)
-const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTimeFormatted}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
+const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTimeFormatted}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}`;
 
 console.log("Google Calendar URL:", googleCalendarURL);  // Log the final URL for debugging
 
