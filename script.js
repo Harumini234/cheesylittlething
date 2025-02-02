@@ -73,22 +73,32 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
 
 // Set fixed date to February 14, 2025
   const eventDate = "2025-02-14"; // Valentine's Day
-  const eventStartTime = `${eventDate}T${selectedTime}:00`; // User's selected time
-  const eventEndTime = new Date(new Date(eventStartTime).getTime() + 60 * 60 * 1000).toISOString().split('T')[1].split('.')[0]; // End time is 1 hour later
- // Your email and the user's email
-  const myEmail = "your-email@example.com"; // Replace with your actual email
+  const [hours, minutes] = selectedTime.split(':'); // Extract hours and minutes from the selected time
 
-  // Event title: dynamic based on the user's meal choice
-  const eventTitle = `Dinner with [Your Name] (${selectedFood})`;
-  
-  // Google Calendar URL with multiple attendees (you + the user)
-  const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTime}/${eventEndTime}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
+// Create the start time in ISO format (Date+Time)
+  const eventStartTime = `${eventDate}T${hours}:${minutes}:00`;
+    
+// Create the end time, 1 hour after the start time
+  const startDate = new Date(eventStartTime);
+  const eventEndTime = new Date(startDate.getTime() + 60 * 60 * 1000); // Add 1 hour
 
-  // Show Google Calendar page and button
+// Format the end time in ISO format (Date+Time)
+  const eventEndTimeFormatted = eventEndTime.toISOString().split('.')[0]; // Remove milliseconds
+
+// Your email and the user's email
+  const myEmail = "haruminishizawac@gmail.com"; // Replace with your actual email
+
+// Event title: dynamic based on the user's meal choice
+  const eventTitle = `Dinner with Mini my small cheesy gf (${selectedFood} date)`;
+
+// Google Calendar URL with multiple attendees (you + the user)
+  const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTime}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
+
+// Show Google Calendar page and button
   document.getElementById("page4").style.display = "none";
   document.getElementById("page5").style.display = "block";
 
-  // Link Google Calendar button to the invite
+// Link Google Calendar button to the invite
   document.getElementById("google-calendar-button").addEventListener("click", () => {
     window.open(googleCalendarURL, "_blank");
   });
