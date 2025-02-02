@@ -71,21 +71,21 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     return;
   }
 
-// Fixed date: February 14, 2025 (14th Feb)
+// Fixed date: February 14, 2025
   const eventYear = 2025;
   const eventMonth = 1; // February (0-based index, January = 0, February = 1)
   const eventDay = 14;
 
-// Split the selected time into hours and minutes
+  // Split the selected time into hours and minutes
   const [hours, minutes] = selectedTime.split(':');
 
-// Create start date using Date.UTC (to ensure UTC time)
-  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours, minutes));
+  // Create start date using the Date constructor with UTC
+  const eventStartDate = new Date(eventYear, eventMonth, eventDay, hours, minutes, 0);
 
-// Add 1 hour to the start date for the end time
+  // Add 1 hour to the start date for the end time
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
 
-// Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ssZ)
+  // Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss)
   const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Removes milliseconds
   const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Removes milliseconds
 
