@@ -71,7 +71,7 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     return;
   }
 
- // We define the fixed date: 14th February 2025
+// We define the fixed date: 14th February 2025
   const eventYear = 2025;
   const eventMonth = 1; // February (month starts at 0, so 1 = February)
   const eventDay = 14;
@@ -79,21 +79,31 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   // Split the time entered by the user and make sure they are valid
   const [hours, minutes] = selectedTime.split(':').map(Number);
 
-    console.log("Hours:", hours);   // Log the parsed hours
-  console.log("Minutes:", minutes); // Log the parsed minutes
+     console.log("Entered Time: ", selectedTime);
+  console.log("Parsed Hours:", hours);   // Log the parsed hours
+  console.log("Parsed Minutes:", minutes); // Log the parsed minutes
 
-    // Create a new Date object representing the event start time
-  // We use Date.UTC() to create the date in UTC time
-  // Time is adjusted to Central European Time (CET), so we subtract 1 hour to convert it into UTC
-  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));
+// Make sure the hour subtraction doesn't push into invalid time ranges
+  let adjustedHours = hours - 1;
 
-  console.log("Adjusted Start Date:", eventStartDate);  // Log the event start date
+  // Check if the adjusted hour is negative (before midnight in CET), reset to 23 for proper conversion
+  if (adjustedHours < 0) {
+    adjustedHours = 23;
+  }
+
+  console.log("Adjusted Hours:", adjustedHours);  // Log adjusted hour after conversion
+
+  // Create a new Date object representing the event start time in UTC
+  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, adjustedHours, minutes));
+
+  console.log("Adjusted Start Date (UTC):", eventStartDate);  // Log the event start date in UTC format
 
   // Add 1 hour to the event's start time to get the end time
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
 
+  console.log("Adjusted End Date:", eventEndDate);  // Log the event end date
+
   // Format the start and end times in ISO format (yyyy-mm-ddThh:mm:ssZ)
-  // This is the format required by Google Calendar
   const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Remove milliseconds
   const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Remove milliseconds
 
