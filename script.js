@@ -73,7 +73,7 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   }
 
 // Prepare Google Calendar invite link
-  const eventTitle = `Dinner with [Your Name] (${selectedFood})`;
+  const eventTitle = `Dinner with Mini my cute little cheesy gf - (${selectedFood}) date`;
   const eventStartTime = `${new Date().toISOString().split('T')[0]}T${selectedTime}:00`; // User selected time
   const eventEndTime = new Date(new Date(eventStartTime).getTime() + 60 * 60 * 1000).toISOString().split('T')[1].split('.')[0]; // 1 hour later
 
