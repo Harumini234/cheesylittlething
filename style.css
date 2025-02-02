@@ -23,8 +23,8 @@
 
 /* Body styling */
 body {
-  background-color: #ffe6f2; /* soft pink background */
-  font-family: "Noto Serif Todhri", serif; /* playful font */
+  background-color: #FFF8F1; /* Cream White */
+  font-family: 'Lato', sans-serif;
   text-align: center;
   color: #333; /* dark enough text color for visibility */
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat991.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2011/12/29/angel-wing-heart.html" target="_blank" title="Angel Wing Heart"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Angel Wing Heart" style="position:absolute; top: 0px; right: 0px;" /></a>
@@ -39,7 +39,8 @@ body {
 
 /* Make headings larger and more prominent */
 h1, h2 {
-  color: #ff3399; /* pink color for headings */
+  font-family: 'Playfair Display', serif;
+  color: #800020; /* Deep Burgundy */
   font-size: 3em;
   margin-bottom: 20px;
 }
@@ -52,10 +53,11 @@ p {
 
 /* Buttons styling */
 button {
-  background-color: #ff3399; /* pink background for buttons */
-  color: white;
+  background-color: #D4AF37; /* Champagne Gold */
+  color: #FFF8F1; /* Cream White */
   border: none;
   padding: 15px 25px;
+  font-family: 'Great Vibes', cursive;
   font-size: 1.2em;
   border-radius: 10px;
   cursor: pointer;
@@ -63,12 +65,12 @@ button {
 }
 
 button:hover {
-  background-color: #ff66b3; /* slightly darker pink on hover */
+  background-color: #F2A6A1; /* Soft Rose Red */
 }
 
 /* Large buttons (for Google Calendar) */
 .large-button {
-  background-color: #ff3399; /* pink background */
+  background-color: #F2A6A1; /* Soft Rose Red */
   color: white;
   padding: 20px 40px;
   font-size: 1.5em;
@@ -80,7 +82,7 @@ button:hover {
 }
 
 .large-button:hover {
-  background-color: #ff66b3; /* darker pink on hover */
+  background-color: #F2A6A1; /* Soft Rose Red */
 }
 
 /* Add some spacing and nice visuals to images */
@@ -97,7 +99,7 @@ input[type="time"] {
   padding: 10px;
   font-size: 1.2em;
   border-radius: 5px;
-  border: 2px solid #ff3399;
+  border: 2px solid #F2A6A1; /*Soft Rose Red*/
   width: 200px;
   margin-top: 20px;
 }
@@ -106,7 +108,7 @@ input[type="email"] {
   padding: 10px;
   font-size: 1.2em;
   border-radius: 5px;
-  border: 2px solid #ff3399;
+  border: 2px solid #F2A6A1; /*Soft Rose Red*/
   width: 200px;
   margin-top: 20px;
 }
