@@ -133,8 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Trigger the submit-time-button when Enter is pressed
-document.getElementById("dinner-time").addEventListener("keypress", (event) => {
+document.getElementById("dinner-time").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
+    event.preventDefault(); // Prevents the default form submit or page reload
     document.getElementById("submit-time-button").click();
   }
 });
