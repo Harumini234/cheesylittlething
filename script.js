@@ -83,9 +83,8 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   console.log("Selected time:", selectedTime);
   console.log("Hours:", hours, "Minutes:", minutes);
 
-// Create the exact date object for February 14, 2025 at the chosen time
-// Use local time (not UTC) because we want to match the user's local timezone
-  const eventStartDate = new Date(eventYear, eventMonth, eventDay, hours, minutes);
+// Create the exact date object for February 14, 2025 at the chosen time (in Europe timezone)
+  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));  // Adjust for Europe time (e.g., UTC+1)
 
 // Log the created event start date
   console.log("Event Start Date:", eventStartDate);
@@ -96,7 +95,7 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
 // Log the event end date
   console.log("Event End Date:", eventEndDate);
 
-// Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss)
+// Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss) and convert them to UTC
   const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Removes milliseconds
   const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Removes milliseconds
 
