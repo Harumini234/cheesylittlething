@@ -71,25 +71,26 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     return;
   }
 
- // Set a fixed date of 14 February 2025, in Central European Time (CET, UTC+1)
+ // We define the fixed date: 14th February 2025
   const eventYear = 2025;
-  const eventMonth = 1; // February (0-based index: January = 0, February = 1)
+  const eventMonth = 1; // February (month starts at 0, so 1 = February)
   const eventDay = 14;
 
-// Split the selected time into hours and minutes
+  // Split the time entered by the user
   const [hours, minutes] = selectedTime.split(':');
 
-// Create a new Date object for the 14th of February 2025, using the selected time.
-// We adjust the time based on Central European Time (CET), which is UTC+1
-  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));  // Adjust for CET
+  // Create a new Date object representing the event start time
+  // We use Date.UTC() to create the date in UTC time
+  // Time is adjusted to Central European Time (CET), so we subtract 1 hour to convert it into UTC
+  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));
 
-// Add 1 hour to the start date for the end time (since it's an hour-long event)
+  // Add 1 hour to the event's start time to get the end time
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
 
-// Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss) and convert them to UTC
-  const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Removes milliseconds
-  const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Removes milliseconds
-
+  // Format the start and end times in ISO format (yyyy-mm-ddThh:mm:ssZ)
+  // This is the format required by Google Calendar
+  const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Remove milliseconds
+  const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Remove milliseconds
 
 // Your email and the user's email
   const myEmail = "haruminishizawac@gmail.com"; // Replace with your actual email
@@ -115,3 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("page1").style.display = "block"; // Show Page 1 on load
 });
 
+// LOGGING the event dates
+  console.log("Start Date: " + eventStartDate); // Inspect the start date
+  console.log("End Date: " + eventEndDate);     // Inspect the end date
