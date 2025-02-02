@@ -76,13 +76,18 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   const eventMonth = 1; // February (month starts at 0, so 1 = February)
   const eventDay = 14;
 
-  // Split the time entered by the user
-  const [hours, minutes] = selectedTime.split(':');
+  // Split the time entered by the user and make sure they are valid
+  const [hours, minutes] = selectedTime.split(':').map(Number);
 
-  // Create a new Date object representing the event start time
+    console.log("Hours:", hours);   // Log the parsed hours
+  console.log("Minutes:", minutes); // Log the parsed minutes
+
+    // Create a new Date object representing the event start time
   // We use Date.UTC() to create the date in UTC time
   // Time is adjusted to Central European Time (CET), so we subtract 1 hour to convert it into UTC
   const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));
+
+  console.log("Adjusted Start Date:", eventStartDate);  // Log the event start date
 
   // Add 1 hour to the event's start time to get the end time
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
@@ -92,20 +97,20 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Remove milliseconds
   const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Remove milliseconds
 
-// Your email and the user's email
+  // Your email and the user's email
   const myEmail = "haruminishizawac@gmail.com"; // Replace with your actual email
 
-// Event title: dynamic based on the user's meal choice
+  // Event title: dynamic based on the user's meal choice
   const eventTitle = `Dinner with Mini my small cheesy gf (${selectedFood} date)`;
 
-// Google Calendar URL with multiple attendees (you + the user)
+  // Google Calendar URL with multiple attendees (you + the user)
   const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTimeFormatted}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
 
-// Show Google Calendar page and button
+  // Show Google Calendar page and button
   document.getElementById("page4").style.display = "none";
   document.getElementById("page5").style.display = "block";
 
-// Link Google Calendar button to the invite
+  // Link Google Calendar button to the invite
   document.getElementById("google-calendar-button").addEventListener("click", () => {
     window.open(googleCalendarURL, "_blank");
   });
@@ -115,7 +120,3 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("page1").style.display = "block"; // Show Page 1 on load
 });
-
-// LOGGING the event dates
-  console.log("Start Date: " + eventStartDate); // Inspect the start date
-  console.log("End Date: " + eventEndDate);     // Inspect the end date
