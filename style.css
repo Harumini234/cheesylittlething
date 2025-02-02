@@ -1,13 +1,13 @@
 /* Ensure the page container takes full height */
 .page {
   display: none;
-  padding: 20px;
   color: #333; /* ensure text color is dark enough to be readable */
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   height: 100vh; /* Full viewport height */
   flex-direction: column; /* Stack elements vertically */
+  text-align: center; /* Make sure text and buttons are centered */
 }
 
 /* Centering the 'Next' button specifically */
@@ -144,14 +144,23 @@ input[type="email"] {
   margin-top: 20px;
 }
 
-/* Specific Page Styling (for the large food images) */
+/* Center the food options and make them responsive */
+.food-options {
+  display: flex;
+  justify-content: center; /* Center the food options horizontally */
+  gap: 20px; /* Add space between food options */
+  flex-wrap: wrap; /* Allow wrapping if the screen is too small */
+  margin-bottom: 30px; /* Add some space below the food options */
+}
+
+/* Specific food option styling */
 .food-option img {
-  width: 200px;
+  width: 150px; /* Adjust the width of images */
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Add shadow */
   cursor: pointer;
-  margin: 10px;
 }
 
 .food-option img:hover {
@@ -159,4 +168,17 @@ input[type="email"] {
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 }
 
-
+/* Button Styling for 'Next' */
+#next-food-button {
+  background-color: #DA627D; /* Rose */
+  color: #FFF8F1;
+  border: none;
+  padding: 15px 25px;
+  font-family: "Fuzzy Bubbles", serif;
+  font-size: 1.2em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px; /* Adjust position slightly */
+  display: inline-block; /* Ensure it stays inline */
+  max-width: 200px; /* Limit the width of the button */
+}
