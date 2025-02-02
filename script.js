@@ -76,7 +76,7 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   const [hours, minutes] = selectedTime.split(':'); // Extract hours and minutes from the selected time
 
 // Create the start time in ISO format (Date+Time)
-  const eventStartTime = `${eventDate}T${hours}:${minutes}:00`;
+  const eventStartTime = `${eventDate}T${hours}:${minutes}:00Z`; // Adding 'Z' for UTC time
     
 // Create the end time, 1 hour after the start time
   const startDate = new Date(eventStartTime);
