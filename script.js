@@ -131,3 +131,10 @@ console.log("Google Calendar URL:", googleCalendarURL);  // Log the final URL fo
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("page1").style.display = "block"; // Show Page 1 on load
 });
+
+// Trigger the submit-time-button when Enter is pressed
+document.getElementById("dinner-time").addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    document.getElementById("submit-time-button").click();
+  }
+});
