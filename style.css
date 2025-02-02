@@ -1,3 +1,16 @@
+/*Bubble font*/
+.fuzzy-bubbles-regular {
+  font-family: "Fuzzy Bubbles", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fuzzy-bubbles-bold {
+  font-family: "Fuzzy Bubbles", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 /*Sparkle*/
 .sparkle {
   position: absolute;
@@ -24,7 +37,7 @@
 /* Body styling */
 body {
   background-color: #FFF8F1; /* Cream White */
-  font-family: 'Lato', sans-serif;
+  font-family: "Fuzzy Bubbles", serif;
   text-align: center;
   color: #333; /* dark enough text color for visibility */
   cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat991.cur), auto !important;}</style><a href="https://www.cursors-4u.com/cursor/2011/12/29/angel-wing-heart.html" target="_blank" title="Angel Wing Heart"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Angel Wing Heart" style="position:absolute; top: 0px; right: 0px;" /></a>
@@ -39,25 +52,26 @@ body {
 
 /* Make headings larger and more prominent */
 h1, h2 {
-  font-family: 'Playfair Display', serif;
-  color: #800020; /* Deep Burgundy */
+  font-family: "Fuzzy Bubbles", serif;
+  color: #450920; /* Burgundy */
   font-size: 3em;
   margin-bottom: 20px;
 }
 
 /* Paragraph text styling */
 p {
+  font-family: "Fuzzy Bubbles", serif;
   font-size: 1.5em;
   color: #333; /* default text color */
 }
 
 /* Buttons styling */
 button {
-  background-color: #D4AF37; /* Champagne Gold */
+  background-color: #DA627D; /* Rose */
   color: #FFF8F1; /* Cream White */
   border: none;
   padding: 15px 25px;
-  font-family: 'Great Vibes', cursive;
+  font-family: "Fuzzy Bubbles", serif;
   font-size: 1.2em;
   border-radius: 10px;
   cursor: pointer;
