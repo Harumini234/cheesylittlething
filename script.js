@@ -71,7 +71,7 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     return;
   }
 
-// Fixed date: February 14, 2025 (explicit year, month, day)
+ // Set a fixed date of 14 February 2025, in Central European Time (CET, UTC+1)
   const eventYear = 2025;
   const eventMonth = 1; // February (0-based index: January = 0, February = 1)
   const eventDay = 14;
@@ -79,25 +79,17 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
 // Split the selected time into hours and minutes
   const [hours, minutes] = selectedTime.split(':');
 
-// Log the values for debugging
-  console.log("Selected time:", selectedTime);
-  console.log("Hours:", hours, "Minutes:", minutes);
+// Create a new Date object for the 14th of February 2025, using the selected time.
+// We adjust the time based on Central European Time (CET), which is UTC+1
+  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));  // Adjust for CET
 
-// Create the exact date object for February 14, 2025 at the chosen time (in Europe timezone)
-  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours - 1, minutes));  // Adjust for Europe time (e.g., UTC+1)
-
-// Log the created event start date
-  console.log("Event Start Date:", eventStartDate);
-
-// Add 1 hour to the start date for the end time
+// Add 1 hour to the start date for the end time (since it's an hour-long event)
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
-
-// Log the event end date
-  console.log("Event End Date:", eventEndDate);
 
 // Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ss) and convert them to UTC
   const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Removes milliseconds
   const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Removes milliseconds
+
 
 // Your email and the user's email
   const myEmail = "haruminishizawac@gmail.com"; // Replace with your actual email
