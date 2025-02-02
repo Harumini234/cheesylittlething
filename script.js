@@ -71,14 +71,18 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
     return;
   }
 
-// Set fixed date to February 14, 2025
-  const eventDate = "2025-02-14"; // Valentine's Day
-  const [hours, minutes] = selectedTime.split(':'); // Extract hours and minutes from the selected time
+// Fixed date: February 14, 2025 (14th Feb)
+  const eventYear = 2025;
+  const eventMonth = 1; // February (0-based index, January = 0, February = 1)
+  const eventDay = 14;
 
-// Create a start date with February 14, 2025 and the selected time
-  const eventStartDate = new Date(`${eventDate}T${hours}:${minutes}:00`);
+// Split the selected time into hours and minutes
+  const [hours, minutes] = selectedTime.split(':');
 
-// Add 1 hour to the start time for the end time
+// Create start date using Date.UTC (to ensure UTC time)
+  const eventStartDate = new Date(Date.UTC(eventYear, eventMonth, eventDay, hours, minutes));
+
+// Add 1 hour to the start date for the end time
   const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
 
 // Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ssZ)
