@@ -62,26 +62,24 @@ document.getElementById("next-food-button").addEventListener("click", () => {
 });
 
 // Handle time selection on Page 4 with dynamic email
-let selectedTime = "";
 document.getElementById("submit-time-button").addEventListener("click", () => {
   selectedTime = document.getElementById("dinner-time").value;
   const boyfriendEmail = document.getElementById("boyfriend-email").value;
-
+  
   if (!selectedTime || !boyfriendEmail) {
     alert("Please select a time and enter an email!");
     return;
   }
 
-// Set fixed date (February 14, 2025)
+// Set fixed date to February 14, 2025
   const eventDate = "2025-02-14"; // Valentine's Day
-  const eventStartTime = `${eventDate}T${selectedTime}:00`; // User's chosen time
-  const eventEndTime = new Date(new Date(eventStartTime).getTime() + 60 * 60 * 1000).toISOString().split('T')[1].split('.')[0]; // 1 hour later
-
-  // Your email and the user's email
-  const myEmail = "haruminishizawac@gmail.com"; 
+  const eventStartTime = `${eventDate}T${selectedTime}:00`; // User's selected time
+  const eventEndTime = new Date(new Date(eventStartTime).getTime() + 60 * 60 * 1000).toISOString().split('T')[1].split('.')[0]; // End time is 1 hour later
+ // Your email and the user's email
+  const myEmail = "your-email@example.com"; // Replace with your actual email
 
   // Event title: dynamic based on the user's meal choice
-  const eventTitle = `Dinner with Mini my cute little cheesy gf (${selectedFood} date)`;
+  const eventTitle = `Dinner with [Your Name] (${selectedFood})`;
   
   // Google Calendar URL with multiple attendees (you + the user)
   const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTime}/${eventEndTime}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
