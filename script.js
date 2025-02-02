@@ -66,15 +66,15 @@ let selectedTime = "";
 document.getElementById("submit-time-button").addEventListener("click", () => {
   selectedTime = document.getElementById("dinner-time").value;
   const boyfriendEmail = document.getElementById("boyfriend-email").value;
-  
+
   if (!selectedTime || !boyfriendEmail) {
     alert("Please select a time and enter an email!");
     return;
   }
 
-  // Prepare Google Calendar invite link
+// Prepare Google Calendar invite link
   const eventTitle = `Dinner with [Your Name] (${selectedFood})`;
-  const eventStartTime = `${new Date().toISOString().split('T')[0]}T${selectedTime}:00`;
+  const eventStartTime = `${new Date().toISOString().split('T')[0]}T${selectedTime}:00`; // User selected time
   const eventEndTime = new Date(new Date(eventStartTime).getTime() + 60 * 60 * 1000).toISOString().split('T')[1].split('.')[0]; // 1 hour later
 
   // Google Calendar URL with multiple attendees (you + boyfriend)
@@ -94,5 +94,4 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("page1").style.display = "block"; // Show Page 1 on load
 });
-
 
