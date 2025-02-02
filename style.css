@@ -1,3 +1,20 @@
+/* Ensure the page container takes full height */
+.page {
+  display: none;
+  padding: 20px;
+  color: #333; /* ensure text color is dark enough to be readable */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Centering the 'Next' button specifically */
+#next-food-button {
+  margin-top: 20px; /* You can adjust this to position it a little lower if needed */
+}
+
 /*Bubble font*/
 .fuzzy-bubbles-regular {
   font-family: "Fuzzy Bubbles", serif;
