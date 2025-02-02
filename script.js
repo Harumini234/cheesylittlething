@@ -1,3 +1,43 @@
+//Handle envelope
+document.addEventListener("DOMContentLoaded", function() {
+    const pages = document.querySelectorAll(".page");
+    let currentPage = 0;
+
+    function showPage(index) {
+        pages.forEach((page, i) => {
+            page.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    document.getElementById("next-button").addEventListener("click", function() {
+        currentPage = 1;
+        showPage(currentPage);
+    });
+
+    document.getElementById("open-envelope-button").addEventListener("click", function() {
+        document.querySelector(".letter").style.bottom = "20px";
+        document.querySelector(".envelope-flap").style.transform = "rotateX(180deg)";
+        setTimeout(() => {
+            document.getElementById("valentine-buttons").style.display = "block";
+        }, 500);
+    });
+
+    document.getElementById("yes-button").addEventListener("click", function(event) {
+        for (let i = 0; i < 15; i++) {
+            createSparkle(event.clientX, event.clientY);
+        }
+        setTimeout(() => {
+            currentPage = 2;
+            showPage(currentPage);
+        }, 1000);
+    });
+
+    document.getElementById("no-button").addEventListener("click", function() {
+        document.getElementById("no-message").style.display = "block";
+    });
+
+
+
 //Handle the sparkles
 document.addEventListener("mousemove", function(event) {
     let sparkle = document.createElement("div");
