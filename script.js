@@ -103,9 +103,9 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
 
   console.log("Adjusted End Date:", eventEndDate);  // Log the event end date
 
-   // Format the start and end times in ISO format (yyyy-mm-ddThh:mm:ssZ) in UTC
-  const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Remove milliseconds
-  const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Remove milliseconds
+ // Format the start and end times in ISO format (yyyy-mm-ddThh:mm:ssZ) in UTC
+const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0] + 'Z'; // Ensure it has the 'Z' for UTC
+const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0] + 'Z'; // Ensure it has the 'Z' for UTC
 
   // Your email and the user's email
   const myEmail = "haruminishizawac@gmail.com"; // Replace with your actual email
@@ -113,10 +113,10 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   // Event title: dynamic based on the user's meal choice
   const eventTitle = `Dinner with Mini my small cheesy gf (${selectedFood} date)`;
 
-  // Google Calendar URL with multiple attendees (you + the user)
-  const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTimeFormatted}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
+ // Google Calendar URL with multiple attendees (you + the user)
+const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTimeFormatted}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
 
-  console.log("Google Calendar URL:", googleCalendarURL);  // Log the final URL for debugging
+console.log("Google Calendar URL:", googleCalendarURL);  // Log the final URL for debugging
 
   // Show Google Calendar page and button
   document.getElementById("page4").style.display = "none";
