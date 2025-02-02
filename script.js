@@ -65,7 +65,7 @@ document.getElementById("next-food-button").addEventListener("click", () => {
 document.getElementById("submit-time-button").addEventListener("click", () => {
   selectedTime = document.getElementById("dinner-time").value;
   const boyfriendEmail = document.getElementById("boyfriend-email").value;
-  
+
   if (!selectedTime || !boyfriendEmail) {
     alert("Please select a time and enter an email!");
     return;
@@ -75,15 +75,15 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   const eventDate = "2025-02-14"; // Valentine's Day
   const [hours, minutes] = selectedTime.split(':'); // Extract hours and minutes from the selected time
 
-// Create the start time in ISO format (Date+Time)
-  const eventStartTime = `${eventDate}T${hours}:${minutes}:00Z`; // Adding 'Z' for UTC time
+// Create a start date with February 14, 2025 and the selected time
+  const eventStartDate = new Date(`${eventDate}T${hours}:${minutes}:00`);
 
-// Create the end time, 1 hour after the start time
-  const startDate = new Date(eventStartTime);
-  const eventEndTime = new Date(startDate.getTime() + 60 * 60 * 1000); // Add 1 hour
+// Add 1 hour to the start time for the end time
+  const eventEndDate = new Date(eventStartDate.getTime() + 60 * 60 * 1000); // 1 hour later
 
-// Format the end time in ISO format (Date+Time)
-  const eventEndTimeFormatted = eventEndTime.toISOString().split('.')[0]; // Remove milliseconds
+// Format the start and end dates in ISO format (yyyy-mm-ddThh:mm:ssZ)
+  const eventStartTimeFormatted = eventStartDate.toISOString().split('.')[0]; // Removes milliseconds
+  const eventEndTimeFormatted = eventEndDate.toISOString().split('.')[0]; // Removes milliseconds
 
 // Your email and the user's email
   const myEmail = "haruminishizawac@gmail.com"; // Replace with your actual email
@@ -92,7 +92,7 @@ document.getElementById("submit-time-button").addEventListener("click", () => {
   const eventTitle = `Dinner with Mini my small cheesy gf (${selectedFood} date)`;
 
 // Google Calendar URL with multiple attendees (you + the user)
-  const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTime}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
+  const googleCalendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${eventStartTimeFormatted}/${eventEndTimeFormatted}&details=${encodeURIComponent(`Enjoy your ${selectedFood}!`)}&attendees=mailto:${myEmail}&attendees=mailto:${boyfriendEmail}`;
 
 // Show Google Calendar page and button
   document.getElementById("page4").style.display = "none";
